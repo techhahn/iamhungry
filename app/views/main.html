@@ -3,3 +3,15 @@
   <p>I am hungry, is an ap that lets users to view recipies</p>
   <p>The users can also search the recipies, rate and comment on them.</p>
 </div>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <div class="col-sm-6 col-md-offset-3">
+      <input type="text" ng-model="searchText" class="form-control" id="searchform" placeholder="Search">
+    </div>
+  </div>
+</form>
+
+<ul ng-repeat="things in awesomeThings | filter:searchText">
+  <li> {{things}} </li>
+</ul>
