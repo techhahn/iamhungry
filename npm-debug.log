@@ -1,0 +1,87 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'bower--strapless',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.2.32
+3 info using node@v0.10.12
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json C:\xampp\htdocs\iamhungry\package.json
+6 warn package.json iamhungry@0.0.0 No repository field.
+7 warn package.json iamhungry@0.0.0 No readme data.
+8 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt\package.json
+9 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-autoprefixer\package.json
+10 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-concurrent\package.json
+11 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-clean\package.json
+12 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-coffee\package.json
+13 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-compass\package.json
+14 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-concat\package.json
+15 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-connect\package.json
+16 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-copy\package.json
+17 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-cssmin\package.json
+18 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-htmlmin\package.json
+19 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-imagemin\package.json
+20 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-jshint\package.json
+21 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-uglify\package.json
+22 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-contrib-watch\package.json
+23 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-google-cdn\package.json
+24 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-newer\package.json
+25 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-ngmin\package.json
+26 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-rev\package.json
+27 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-svgmin\package.json
+28 verbose read json C:\xampp\htdocs\iamhungry\node_modules\grunt-usemin\package.json
+29 verbose read json C:\xampp\htdocs\iamhungry\node_modules\jshint-stylish\package.json
+30 verbose read json C:\xampp\htdocs\iamhungry\node_modules\load-grunt-tasks\package.json
+31 verbose read json C:\xampp\htdocs\iamhungry\node_modules\time-grunt\package.json
+32 verbose from cache C:\xampp\htdocs\iamhungry\package.json
+33 verbose readDependencies using package.json deps
+34 verbose cache add [ 'bower--strapless', null ]
+35 verbose cache add name=undefined spec="bower--strapless" args=["bower--strapless",null]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: 'bower--strapless',
+36 verbose parsed url   path: 'bower--strapless',
+36 verbose parsed url   href: 'bower--strapless' }
+37 silly lockFile cbbbb05d-bower-strapless bower--strapless
+38 verbose lock bower--strapless C:\Users\techhahn\AppData\Roaming\npm-cache\cbbbb05d-bower-strapless.lock
+39 silly lockFile cbbbb05d-bower-strapless bower--strapless
+40 silly lockFile cbbbb05d-bower-strapless bower--strapless
+41 verbose addNamed [ 'bower--strapless', '' ]
+42 verbose addNamed [ null, '' ]
+43 silly lockFile ad4ba0cb-bower-strapless bower--strapless@
+44 verbose lock bower--strapless@ C:\Users\techhahn\AppData\Roaming\npm-cache\ad4ba0cb-bower-strapless.lock
+45 silly addNameRange { name: 'bower--strapless', range: '', hasData: false }
+46 verbose url raw bower--strapless
+47 verbose url resolving [ 'https://registry.npmjs.org/', './bower--strapless' ]
+48 verbose url resolved https://registry.npmjs.org/bower--strapless
+49 info trying registry request attempt 1 at 16:11:04
+50 http GET https://registry.npmjs.org/bower--strapless
+51 http 404 https://registry.npmjs.org/bower--strapless
+52 silly registry.get cb [ 404,
+52 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R15B03)',
+52 silly registry.get     date: 'Mon, 09 Dec 2013 10:41:08 GMT',
+52 silly registry.get     'content-type': 'application/json',
+52 silly registry.get     'content-length': '52',
+52 silly registry.get     'cache-control': 'must-revalidate' } ]
+53 silly lockFile ad4ba0cb-bower-strapless bower--strapless@
+54 silly lockFile ad4ba0cb-bower-strapless bower--strapless@
+55 error 404 'bower--strapless' is not in the npm registry.
+55 error 404 You should bug the author to publish it
+55 error 404
+55 error 404 Note that you can also install from a
+55 error 404 tarball, folder, or http url, or git url.
+56 error System Windows_NT 6.2.9200
+57 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "bower--strapless" "--save-dev"
+58 error cwd C:\xampp\htdocs\iamhungry
+59 error node -v v0.10.12
+60 error npm -v 1.2.32
+61 error code E404
+62 verbose exit [ 1, true ]
