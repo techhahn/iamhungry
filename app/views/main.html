@@ -3,15 +3,46 @@
   <p>I am hungry, is an ap that lets users to view recipies</p>
   <p>The users can also search the recipies, rate and comment on them.</p>
 </div>
+<div class="row">
+  <div class="col-md-3">
 
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <div class="col-sm-6 col-md-offset-3">
-      <input type="text" ng-model="searchText" class="form-control" id="searchform" placeholder="Search">
+    <ul class="list-group">
+      <li class="list-group-item">       
+        <p class="text-center text-danger"><strong>Veg/Non-Veg</strong></p>
+      </li>
+      <li class="list-group-item">
+        <input id="veg" class="pull-right" checked type="checkbox">       
+        <label for="veg" class="text-info">Vegitarian</label>
+      </li>
+      <li class="list-group-item">
+        <input id="nveg" class="pull-right" checked type="checkbox">       
+        <label for="nveg" class="text-info">Non-Vegitarian</label>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <input ng-model="searchText.name" placeholder="Search" type="text" class="form-control">
+            <span class="input-group-btn">
+            <button class="btn" type="button"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+            </div><!-- /input-group -->
+          </div>
+        </div>
+      </form>
+      <div class="row" >
+        <div class="col-sm-4 col-md-4" ng-repeat="recipe in awesomeThings | filter:searchText:strict">
+          <div class="thumbnail">
+            <img alt="300x200" style="width: 300px; height: 200px;" ng-src="{{ recipe.img }}">
+            <div class="caption">
+              <h3>{{ recipe.name }}</h3>
+              <p>{{ recipe.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</form>
-
-<ul ng-repeat="things in awesomeThings | filter:searchText">
-  <li> {{things}} </li>
-</ul>

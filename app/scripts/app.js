@@ -4,10 +4,14 @@ angular.module('iamhungryApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ezfb'
 ])
-  .config(['$routeProvider', 
-function ($routeProvider) {
+.config(['$routeProvider', '$FBProvider',
+function ($routeProvider, $FBProvider) {
+    $FBProvider.setInitParams({
+      appId: '559648674122615'
+    });
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
