@@ -46,7 +46,7 @@
           <li><a class="btn btn-link" ng-click="login()" ng-hide="loginStatus.status == 'connected'"><span class="label label-primary"><span class="glyphicon glyphicon-log-in"></span> Login with facebook</span></a></li>
           <li><a class="btn btn-link" ng-click="logout()" ng-hide="!loginStatus || loginStatus.status != 'connected'"><span class="glyphicon glyphicon-log-out"></span></a></li>
           <li><a href="{{apiMe.link}}">{{apiMe.name}}</a></li>
-          <li><img class="img-circle user-profile-pic" ng-src="http://graph.facebook.com/{{apiMe.id}}/picture?type=square" alt="{{apiMe.username}}'s profile"></li>
+          <li><img class="img-circle user-profile-pic" ng-hide="!loginStatus || loginStatus.status != 'connected'" ng-src="http://graph.facebook.com/{{apiMe.id}}/picture?type=square" alt="{{apiMe.username}}'s profile"></li>
 <!--           <li>
             <form class="navbar-form navbar-left" role="search">
               <div class="form-group">
