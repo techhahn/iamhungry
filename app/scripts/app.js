@@ -21,6 +21,10 @@ function ($routeProvider, $FBProvider) {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

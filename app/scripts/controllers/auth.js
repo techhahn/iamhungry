@@ -2,7 +2,7 @@
 
 angular.module('iamhungryApp')
 	.controller('AuthCtrl',
-		function($scope, $FB, fbAuth) {
+		function($scope, $FB, fbAuth, $location) {
 
 			var autoToJSON = ['loginStatus', 'apiMe'];
 
@@ -44,6 +44,7 @@ angular.module('iamhungryApp')
 			$scope.logout = function() {
 				$FB.logout(function() {
 					updateLoginStatus(updateApiMe);
+					$location.path('/');
 				});
 			};
 		});
