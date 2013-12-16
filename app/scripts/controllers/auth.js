@@ -2,8 +2,10 @@
 
 angular.module('iamhungryApp')
 	.controller('AuthCtrl',
-		function($scope, $FB) {
+		function($scope, $FB, fbAuth) {
+
 			var autoToJSON = ['loginStatus', 'apiMe'];
+
 			angular.forEach(autoToJSON, function(varName) {
 				$scope.$watch(varName, function(val) {
 					$scope[varName + 'JSON'] = JSON.stringify(val, null, 2);
@@ -13,7 +15,7 @@ angular.module('iamhungryApp')
 			function updateLoginStatus(more) {
 				$FB.getLoginStatus(function(res) {
 					$scope.loginStatus = res;
-
+					fbAuth.user.loggedIn = res.status;
 					(more || angular.noop)();
 				});
 			}
@@ -21,6 +23,7 @@ angular.module('iamhungryApp')
 			function updateApiMe() {
 				$FB.api('/me', function(res) {
 					$scope.apiMe = res;
+					fbAuth.user.loggedUser = res;
 				});
 			}
 			updateLoginStatus(updateApiMe);
