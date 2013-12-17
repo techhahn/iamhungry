@@ -14,7 +14,5 @@ angular.module('iamhungryApp')
 		$scope.$on('updateUser', function() {
 			$scope.loggedIn = fbAuth.user.loggedIn;
 			$scope.user = fbAuth.user.loggedUser;
-			console.log(fbAuth.user.loggedIn);
-			console.log(fbAuth.user.loggedUser);
 		});
 	});
