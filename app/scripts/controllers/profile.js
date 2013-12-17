@@ -3,10 +3,11 @@
 angular.module('iamhungryApp')
 	.controller('ProfileCtrl', function($scope, fbAuth, $location) {
 		
-		 // initialize $scope variables
-		 // without initializeing here $scope wont be able to get user details.
-		 // need to log out n log in to supply the correct vales to the scope
-
+		 /* initialize $scope variables
+		  without initializeing here $scope wont be able to get user details.
+		  need to log out n log in to supply the correct vales to the scope
+		 */
+		 
 		$scope.loggedIn = fbAuth.user.loggedIn;
 		$scope.user = fbAuth.user.loggedUser;
 
