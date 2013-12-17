@@ -41,12 +41,12 @@
         <ul class="nav navbar-nav">
           <li><a class="btn btn-link" href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul ng-cloak class="nav navbar-nav navbar-right">
           <li><a class="btn btn-link" href="#about" alt="About"><span class="glyphicon glyphicon-question-sign"></span><span class="visible-xs">About this app</span></a></li>
           <li><a class="btn btn-link" ng-click="login()" ng-hide="loginStatus.status == 'connected'"><span class="label label-primary"><span class="glyphicon glyphicon-log-in"></span> Login with facebook</span></a></li>
-          <li><a class="btn btn-link" ng-click="logout()" ng-hide="!loginStatus || loginStatus.status != 'connected'"><span class="glyphicon glyphicon-log-out"></span><span class="visible-xs"> Logout {{apiMe.username}}</span></a></li>
+          <li ng-hide="!loginStatus || loginStatus.status != 'connected'"><a class="btn btn-link" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span><span class="visible-xs"> Logout {{apiMe.username}}</span></a></li>
           <li><a class="btn btn-link" href="#/profile"><span class="glyphicon glyphicon-user"></span> {{apiMe.name}}</a></li>
-          <li><img class="img-circle center-block user-profile-pic" ng-hide="!loginStatus || loginStatus.status != 'connected'" ng-src="http://graph.facebook.com/{{apiMe.id}}/picture?type=square" alt="{{apiMe.username}}'s profile"></li>
+          <li ng-hide="!loginStatus || loginStatus.status != 'connected'"><img class="img-circle center-block user-profile-pic" ng-src="http://graph.facebook.com/{{apiMe.id}}/picture?type=square" alt="{{apiMe.username}}'s profile"></li>
 <!--           <li>
             <form class="navbar-form navbar-left" role="search">
               <div class="form-group">

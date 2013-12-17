@@ -1,0 +1,15 @@
+<div class="row">
+	<div ng-hide="!loggedIn || loggedIn.status != 'connected'" class="col-sm-4 well">
+		<h2 class="text-center">{{user.name}}, <small>{{user.username}}</small></h2>
+		<img ng-src="http://graph.facebook.com/{{user.id}}/picture?type=large" alt="" class="thumbnail center-block img-responsive">
+		<h4 class="text-center">{{user.email}}</h4>
+		<p class="text-center"><a href="{{user.link}}">facebook account link</a></p>
+	</div>
+	<div ng-hide="!loggedIn || loggedIn.status != 'connected'" class="col-sm-8">
+		{{user | json}}
+	</div>
+	<div class="col-md-12" ng-show="!loggedIn || loggedIn.status != 'connected'">
+		<h1>Please Login to your facebook account.</h1>
+		<p>You need to have your facebook account inorder to login and use this site.</p>
+	</div>
+</div>

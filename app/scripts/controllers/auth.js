@@ -15,15 +15,15 @@ angular.module('iamhungryApp')
 			function updateLoginStatus(more) {
 				$FB.getLoginStatus(function(res) {
 					$scope.loginStatus = res;
-					fbAuth.user.loggedIn = res.status;
+					fbAuth.user.loggedStatusBroadcast(res);
 					(more || angular.noop)();
 				});
 			}
 
 			function updateApiMe() {
 				$FB.api('/me', function(res) {
+					fbAuth.user.userDetailsBroadcast(res);
 					$scope.apiMe = res;
-					fbAuth.user.loggedUser = res;
 				});
 			}
 			updateLoginStatus(updateApiMe);
@@ -44,7 +44,7 @@ angular.module('iamhungryApp')
 			$scope.logout = function() {
 				$FB.logout(function() {
 					updateLoginStatus(updateApiMe);
-					$location.path('/');
+					// $location.path('/');
 				});
 			};
 		});
