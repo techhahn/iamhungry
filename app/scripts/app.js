@@ -5,6 +5,7 @@ angular.module('iamhungryApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngAnimate',
   'ezfb'
 ])
 .config(['$routeProvider', '$FBProvider',
