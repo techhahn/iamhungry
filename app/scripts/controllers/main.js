@@ -1,7 +1,19 @@
 'use strict';
 
 angular.module('iamhungryApp')
-	.controller('MainCtrl', function($scope) {
+	.controller('MainCtrl', function($scope, fbAuth) {
+
+		/*
+			user login variables
+			used to hide the add recepic button if user is not logged in.
+		*/
+
+		$scope.loggedIn = fbAuth.user.loggedIn;
+		$scope.$on('updateUser', function() {
+			$scope.loggedIn = fbAuth.user.loggedIn;
+		});
+
+
 
 		$scope.awesomeThings = [{
 			name: 'HTML5 Boilerplate',

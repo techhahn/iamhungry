@@ -5,21 +5,22 @@
 </div>
 <div class="row">
   <div class="col-md-3">
-
     <ul class="list-group">
-      <li class="list-group-item">       
+      <li class="list-group-item">
         <p class="text-center text-danger"><strong>Veg/Non-Veg</strong></p>
       </li>
       <li class="list-group-item">
-        <input id="veg" class="pull-right" checked type="checkbox">       
+        <input id="veg" class="pull-right" checked type="checkbox">
         <label for="veg" class="text-info">Vegitarian</label>
       </li>
       <li class="list-group-item">
-        <input id="nveg" class="pull-right" checked type="checkbox">       
+        <input id="nveg" class="pull-right" checked type="checkbox">
         <label for="nveg" class="text-info">Non-Vegitarian</label>
       </li>
+      <li>
+        <a href="#" ng-hide="!loggedIn || loggedIn.status != 'connected'" class="btn btn-info btn-block"><span class="glyphicon glyphicon-plus"></span> Add new recipie</a>               
+      </li>
     </ul>
-    <a href="#" class="btn btn-info btn-block"><span class="glyphicon glyphicon-plus"></span> Add new recipie</a>
   </div>
   <div class="col-md-9">
     <form class="form-horizontal" role="form">
@@ -37,9 +38,9 @@
       <div class="row" >
         <div class="col-sm-4 col-md-4 repeated-item" ng-repeat="recipe in awesomeThings | filter:searchText:strict">
           <div class="thumbnail">
-            <img alt="300x200" style="width: 300px; height: 200px;" ng-src="{{ recipe.img }}">
+            <img class="thumb-img" alt="300x200" ng-src="{{ recipe.img }}">
             <div class="caption">
-              <h3>{{ recipe.name }}</h3>
+              <h4 class="text-center">{{ recipe.name | limitTo:20 }}</h4>
               <p>{{ recipe.desc }}</p>
             </div>
           </div>

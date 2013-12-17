@@ -74,3 +74,10 @@ its own definition of keyframe animation code...
 
 .animate-show-hide.ng-hide-add,
 .animate-show-hide.ng-hide-remove.ng-hide-remove-active { -webkit-transform: translateY(100px); -moz-transform: translateY(100px); opacity: 1; }
+
+
+
+.thumbnail .thumb-img {
+	width: 300px; 
+	height: 200px;
+}
