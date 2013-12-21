@@ -17,8 +17,8 @@
         <input id="nveg" class="pull-right" checked type="checkbox">
         <label for="nveg" class="text-info">Non-Vegitarian</label>
       </li>
-      <li>
-        <a href="#" ng-hide="!loggedIn || loggedIn.status != 'connected'" class="btn btn-info btn-block"><span class="glyphicon glyphicon-plus"></span> Add new recipie</a>               
+      <li ng-hide="!loggedIn || loggedIn.status != 'connected'">
+        <a href="#" class="btn btn-info btn-block"><span class="glyphicon glyphicon-plus"></span> Add new recipie</a>
       </li>
     </ul>
   </div>
@@ -35,13 +35,16 @@
           </div>
         </div>
       </form>
-      <div class="row" >
+      <div class="row thumbnail-container">
         <div class="col-sm-4 col-md-4 repeated-item" ng-repeat="recipe in awesomeThings | filter:searchText:strict">
           <div class="thumbnail">
-            <img class="thumb-img" alt="300x200" ng-src="{{ recipe.img }}">
-            <div class="caption">
-              <h4 class="text-center">{{ recipe.name | limitTo:20 }}</h4>
-              <p>{{ recipe.desc }}</p>
+              <img class="thumb-img" alt="300x200" ng-src="{{ recipe.img }}">
+              <div class="caption">
+                <h4 class="text-center">{{ recipe.name | limitTo:20 }}</h4>
+                <p class="back">{{ 'recipe.desc' }}</p>
+              </div>
+            <div class="back">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, doloribus?</p>
             </div>
           </div>
         </div>

@@ -7,9 +7,10 @@ class
 */
 .repeated-item.ng-enter, .repeated-item.ng-move {
 	-webkit-transition: 0.5s linear all;
+	-webkit-transform: scale( 1.2,1.2 );
 	-o-transition: 0.5s linear all;
 	-moz-transition: 0.5s linear all;
-	opacity: 0;
+	transform: scale( 1.2,1.2 );
 	transition: 0.5s linear all;
 }
 
@@ -20,7 +21,10 @@ are set so that the animation knows what to
 animate.
 */
 .repeated-item.ng-enter.ng-enter-active,
-.repeated-item.ng-move.ng-move-active { opacity: 1; }
+.repeated-item.ng-move.ng-move-active { 
+	-webkit-transform: scale( 1,1 );
+	transform: scale( 1,1 ); 
+}
 
 /*
 We're using CSS keyframe animations for when
@@ -35,8 +39,8 @@ that has the .repeated-item class
 }
 
 @keyframes my_animation {
-				from { opacity: 1; }
-				to { opacity: 0; }
+					from { opacity: 1; }
+					to { opacity: 0; }
 }
 
 /*
@@ -44,18 +48,18 @@ Unfortunately each browser vendor requires
 its own definition of keyframe animation code...
 */
 @-webkit-keyframes my_animation {
-				from { opacity: 1; }
-				to { opacity: 0; }
+					from { -webkit-transform: scale( 1.2,1.2 ); transform: scale( 1.2,1.2 ); }
+					to { -webkit-transform: scale( 1,1 ); transform: scale( 1,1 ); }
 }
 
 @-moz-keyframes my_animation {
-				from { opacity: 1; }
-				to { opacity: 0; }
+					from { -webkit-transform: scale( 1.2,1.2 ); transform: scale( 1.2,1.2 ); }
+					to { -webkit-transform: scale( 1,1 ); transform: scale( 1,1 ); }
 }
 
 @-o-keyframes my_animation {
-				from { opacity: 1; }
-				to { opacity: 0; }
+					from { -webkit-transform: scale( 1.2,1.2 ); transform: scale( 1.2,1.2 ); }
+					to { -webkit-transform: scale( 1,1 ); transform: scale( 1,1 ); }
 }
 
 /*animation for the profile, show and hide when logging*/
@@ -77,7 +81,39 @@ its own definition of keyframe animation code...
 
 
 
-.thumbnail .thumb-img {
-	width: 300px; 
-	height: 200px;
+.thumbnail .thumb-img { height: 200px; width: 300px; }
+
+.thumbnail-container { -webkit-perspective: 1000px; perspective: 1000px; }
+
+.repeated-item { -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-transform-origin: 20% 40%;transform-origin: 20% 40%;}
+
+.repeated-item .thumbnail {
+	backface-visibility: hidden;
 }
+.repeated-item:hover .thumbnail {
+	-webkit-transform: scale3d(1.1,1.1,1.1);
+	box-shadow: 0 0 50px rgba(0,0,0,.3);
+	transform: scale3d(1.1,1.1,1.1);
+	z-index: 0;
+}
+.repeated-item:nth-child(3n) {
+	content: '</br>';
+}
+/*.repeated-item:hover .thumbnail {
+	-webkit-transform: rotateY( -23deg );
+	box-shadow: 0 0 50px rgba(0,0,0,.3);
+	transform: rotateY( -23deg );
+	z-index: 0;
+}
+.repeated-item:nth-child(3n+1):hover .thumbnail {
+	-webkit-transform: rotateY( 23deg );
+	box-shadow: 0 0 50px rgba(0,0,0,.3);
+	transform: rotateY( 23deg );
+	z-index: 0;
+}
+.repeated-item:nth-child(3n+2):hover .thumbnail {
+	-webkit-transform: scale( 1.1,1.1 );
+	box-shadow: 0 0 50px rgba(0,0,0,.3);
+	transform: scale( 1.1,1.1 );
+	z-index: 0;
+}*/
