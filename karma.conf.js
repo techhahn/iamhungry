@@ -1,28 +1,20 @@
 // Karma configuration
-// Generated on Mon Dec 09 2013 22:08:54 GMT+0530 (India Standard Time)
+// Generated on Tue Dec 17 2013 23:20:21 GMT+0530 (India Standard Time)
 
 module.exports = function(config) {
   config.set({
 
     // base path, that will be used to resolve files and exclude
-    basePath: '/',
+    basePath: '',
 
 
     // frameworks to use
-    frameworks: ['mocha', 'requirejs'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
-    files: [      
-      'test/lib/angular/chai.js',
-      'Scripts/angular.js',
-      'Scripts/angular-*.js',
-      'test/lib/angular/angular-mocks.js',
-      'Scripts/ControllerForTest.js',
-      'Scripts/ControllerForTestModule.js',
-      'Scripts/LogLoader.js',
-      'Scripts/App.js',
-      'test/unit/**/*.js'
+    files: [
+      test/spec/controllers/about.js
     ],
 
 
@@ -71,6 +63,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    singleRun: false
   });
 };
